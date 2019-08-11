@@ -1,0 +1,128 @@
+/* mobile default */
+/* maybe i need to put the image and the details in a grid to keep shape */
+.product_item-container {
+  margin-bottom: 20px;
+  background-color: #ffff;
+  border-radius: 8px;
+}
+
+.product_item {
+  width: 100%;
+}
+
+.product_item-container img {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-radius: 8px 8px 0 0;
+}
+.product_title-price {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product_title-price span:nth-of-type(1) {
+  font-weight: normal;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 25px;
+}
+/* money */
+.product_title-price span:nth-of-type(2) {
+  font-weight: lighter;
+  font-size: 16px;
+  line-height: 19px;
+}
+/* remainder */
+.product_item-container p:nth-of-type(2) {
+  color: #9b9b9b;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 14px;
+  padding-bottom: 20px;
+}
+.product_item-container button {
+  width: 121px;
+  height: 31px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.product_item-details {
+  padding: 20px 25px;
+  /* border-radius: 8px; */
+}
+
+/*  */
+/*  */
+
+/* .product_item img{
+  width: 100%;
+  height: 100%;
+} */
+
+/* tablet */
+/* set the max-width to from default 481px to 615px due to inconsistency 
+between the size of the card's since chronograph title is too long */
+@media (min-width: 615px) and (max-width: 1024px) {
+  .product_title-price span:nth-of-type(1) {
+    font-size: 28px;
+    line-height: 33px;
+  }
+  .product_item-container p:nth-of-type(2) {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .product_item {
+    display: flex;
+  }
+  .product_item-container img {
+    border-radius: 8px 0 0 8px;
+  }
+  .product_item-details {
+    padding: 20px 30px;
+    width: 100%;
+    /* border-radius: 8px; */
+  }
+}
+
+/* web - full screen */
+@media (min-width: 1025px) and (max-width: 2600px) {
+  .product_item-container {
+    max-height: 282px;
+    max-width: 1120px;
+  }
+  .product_title-price span:nth-of-type(1) {
+    font-size: 38px;
+    line-height: 46px;
+  }
+  .product_item {
+    display: flex;
+  }
+  /* money */
+  .product_title-price span:nth-of-type(2) {
+    font-size: 21px;
+    line-height: 25px;
+  }
+  /* remainder */
+  .product_item-container p:nth-of-type(2) {
+    font-size: 13px;
+    line-height: 15px;
+    padding-bottom: 50px;
+  }
+  .product_item-container button {
+    margin-bottom: 30px;
+  }
+  .product_item-details {
+    padding: 20px 30px;
+    width: 100%;
+  }
+  .product_item-container img {
+    border-radius: 8px 0 0 8px;
+    height: auto;
+    width: auto;
+  }
+}
