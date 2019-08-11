@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Chivo:300,400,700&display=swap');
+
+@font-face {
+  font-family: 'helvetica_neueregular';
+  src: url('http://localhost:3000/helveticaneue-thin-webfont.woff2') format('woff2'),
+    url('http://localhost:3000/helveticaneue-thin-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Chivo', sans-serif;
+  color: #292929;
+  margin: 0;
+  font-size: 14;
+  line-height: 17px;
+}
+
+h1 {
+  font-family: 'Chivo', sans-serif;
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}

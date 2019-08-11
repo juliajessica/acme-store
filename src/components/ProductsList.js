@@ -1,16 +1,16 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import { node } from 'prop-types';
+import FadeIn from 'react-fade-in';
 
-const ProductsList = ({ title, children }) => (
-  <div>
-    <h3>{title}</h3>
-    <div>{children}</div>
+import './productsList.css';
+
+const ProductsList = ({ children }) => (
+  <div className="products-list-container">
+    <FadeIn>{children}</FadeIn>
   </div>
-)
+);
 
 ProductsList.propTypes = {
-  children: PropTypes.node,
-  title: PropTypes.string.isRequired
-}
-
-export default ProductsList
+  children: node.isRequired
+};
+export default ProductsList;
