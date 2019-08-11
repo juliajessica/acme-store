@@ -1,17 +1,17 @@
 #WORK AND CO Code Assesment Planning:#
 
 - [x] Add readme with notes on planning and ideas
-- [ ] Update props in all the files, and organize files
-- [ ] Add eslint and prettier to project
-- [ ] Install Chivo and Helvetica Neue fonts
-- [ ] Pascal Case all directories in App
+- [] Update props in all the files, and organize files
+- [x] Add eslint and prettier to project
+- [] Install Chivo and Helvetica Neue fonts
+- [] Pascal Case all directories in App
 - [ ] Create Stylesheets for all components that need styles
-- [ ] Add all svgs and images into Assets folder
+- [x] Add all svgs and images into Assets folder
 - [ ] Identify and create reusable components and add all the different states to them
 - [ ] Build from mobile first
 - [ ] Verfiy the tax percentage and calculate it for the cart total
 - [ ] Add states for loading - for a better UX Experience
-- [ ] Note to self can use any react library to add to the app
+- [ ] Note to self: I can use any react library to add to the app
 
 **_START HERE:_**
 

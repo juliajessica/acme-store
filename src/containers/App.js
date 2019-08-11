@@ -1,15 +1,17 @@
-import React from 'react'
-import ProductsContainer from './ProductsContainer'
-import CartContainer from './CartContainer'
+import React from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ProductsContainer from './ProductsContainer';
+import CartContainer from './CartContainer';
+
+import './app.css';
 
 const App = () => (
-  <div>
-    <h2>Shopping Cart Example</h2>
-    <hr/>
-    <ProductsContainer />
-    <hr/>
-    <CartContainer />
-  </div>
-)
+  <BrowserRouter>
+    <Switch>
+      <Route exact path="/" component={ProductsContainer} />
+      <Route path="/cart" component={CartContainer} />
+    </Switch>
+  </BrowserRouter>
+);
 
-export default App
+export default App;
