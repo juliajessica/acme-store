@@ -1,11 +1,11 @@
-import { getTotal, getCartProducts } from './index'
+import { getTotal, getCartProducts } from './index';
 
 describe('selectors', () => {
   describe('getTotal', () => {
     it('should return price total', () => {
       const state = {
         cart: {
-          addedIds: [ 1, 2, 3 ],
+          addedIds: [1, 2, 3],
           quantityById: {
             1: 4,
             2: 2,
@@ -28,16 +28,16 @@ describe('selectors', () => {
             }
           }
         }
-      }
-      expect(getTotal(state)).toBe('27.93')
-    })
-  })
+      };
+      expect(getTotal(state)).toBe('27.93');
+    });
+  });
 
   describe('getCartProducts', () => {
     it('should return products with quantity', () => {
       const state = {
         cart: {
-          addedIds: [ 1, 2, 3 ],
+          addedIds: [1, 2, 3],
           quantityById: {
             1: 4,
             2: 2,
@@ -60,7 +60,7 @@ describe('selectors', () => {
             }
           }
         }
-      }
+      };
 
       expect(getCartProducts(state)).toEqual([
         {
@@ -78,7 +78,7 @@ describe('selectors', () => {
           price: 9.99,
           quantity: 1
         }
-      ])
-    })
-  })
-})
+      ]);
+    });
+  });
+});
