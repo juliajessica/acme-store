@@ -69,6 +69,7 @@ button:hover {
 
 /* textLink theme  */
 .button_textLink {
+  display: flex;
   text-transform: none;
   background: none;
   padding: 0;
@@ -77,6 +78,7 @@ button:hover {
   text-decoration: none;
 }
 .button_textLink svg {
+  margin-top: 15px;
   height: 13.54px;
   width: 17px;
   margin-right: 8px;

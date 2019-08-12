@@ -7,7 +7,7 @@ import './product.css';
 
 const Product = ({ price, inventory, title, quantity }) => (
   <div className="product_container">
-    <p className="product_details">
+    <div className="product_details">
       <div className="product-image">
         {images.map(image => {
           return title === image.title ? (
@@ -22,7 +22,7 @@ const Product = ({ price, inventory, title, quantity }) => (
           Remove
         </button>
       </div>
-    </p>
+    </div>
     <div className="product-total-quantity">
       <Button
         // onCheckoutClicked={() => checkout(products)}

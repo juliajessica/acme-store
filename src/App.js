@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import ProductsContainer from './ProductsContainer';
-import CartContainer from './CartContainer';
+import ProductsContainer from './containers/ProductsContainer';
+import CartContainer from './containers/CartContainer';
+import 'bootstrap/dist/css/bootstrap.css';
 
 import './app.css';
 

@@ -1,17 +1,14 @@
 /* .product_container {
 } */
-
 .product_details {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-
 .product_details img {
   max-height: 78px;
   max-width: 107px;
 }
-
 .product_details-flex {
   display: flex;
   flex-direction: column;
@@ -23,7 +20,6 @@
 .product_details-flex button {
   margin-top: 10px;
 }
-
 /* title */
 .product_details span:nth-of-type(1) {
   font-family: 'Chivo', sans-serif;
@@ -52,9 +48,8 @@
 .product_remove-button:hover {
   cursor: pointer;
 }
-button:nth-of-type(1) {
-}
-
+/* button:nth-of-type(1) {
+} */
 .product-total-quantity {
   display: flex;
   flex-direction: row;
