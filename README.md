@@ -1,5 +1,7 @@
 # Work & Co Web Code Assessment
 
+If you'd like to see all of my decision-making process please view the [planning.md](planning.md) file for more details.
+
 This is a copy of the [Redux Shopping Cart Example](https://github.com/reactjs/redux/tree/master/examples/shopping-cart).
 
 To install dependencies, use the package manager [Yarn](https://yarnpkg.com/en/):
@@ -34,6 +36,13 @@ Note: You're encouraged to show your work by including multiple commits - we'll 
 2. [Enhance Cart Functionality](/tasks/02-cart-enhancements.md)
 3. [Hook Up Product API](/tasks/03-product-api.md)
 
-You're welcome (but not required) to add any libraries you think would be helpful.
+## Libraries Used:
 
-Please also update this README file: we'd love to see notes on your decision-making process, links to the most exciting pieces of code, or anything else that will give us additional context when reviewing your assessment.
+- React Bootstrap
+- React Fade In
+- React Redux
+- React Router Dom
+
+_For development and cleanliness of code:_
+Eslint
+Prettier

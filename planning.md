@@ -5,13 +5,21 @@
 - [x] Add eslint and prettier to project
 - [x] Install Chivo and Helvetica Neue fonts
 - [x] Pascal Case all directories in App
-- [ ] Create Stylesheets for all components that need styles
+- [x] Create Stylesheets for all components that need styles
 - [x] Add all svgs and images into Assets folder
 - [x] Identify and create reusable components and add all the different states to them
 - [x] Build from mobile first
-- [ ] Verfiy the tax percentage and calculate it for the cart total
-- [ ] Add states for loading - for a better UX Experience
+- [ ] Verify the tax percentage and calculate it for the cart total
+- [x] Look up modals in React
+- [x] Add states for loading - for a better UX Experience
 - [ ] Note to self: I can use any react library to add to the app
+
+**_RESEARCH/DISCOVER:_**
+
+Work on the modal was pulled from React Bootstrap: https://react-bootstrap.netlify.com/components/modal/#modal-props
+Animations are pulled from the React-Fade-In Library: https://www.npmjs.com/package/react-fade-in
+For routing through the application I simply used React-Router-Dom: https://www.npmjs.com/package/react-router-dom
+Having to toggle between the modal for the full-screen shopping cart view I have to figure out the window.inner width to change the display: https://developer.mozilla.org/en-US/docs/Web/API/window/innerWidth
 
 **_START HERE:_**
 
@@ -54,3 +62,7 @@ What is the state tax? - https://pocketsense.com/how-to-calculate-sales-tax-back
 Based off of the designs it seems that the application is adding a tax value to the total. The desings example shows $40.34 is applied to the $500.01 total. I calculated that the tax is a total of 8% for each item. - verfiy that this is correct with Diana.
 
 Does this require adding additional testing?
+
+### Cart:
+
+I noticed that the numeric total quantity for each item in the cart had the font set to `Lora Regular` in the sketch file. I made a design decision to keep the font aligned with the stlye guidelines and set it to `font-family: 'Chivo', sans-serif;`.
