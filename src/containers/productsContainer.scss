@@ -1,0 +1,30 @@
+.products {
+  &_container {
+    background-color: #f2f4f7;
+    height: 100%;
+  }
+  &_product-wrapper,
+  &_nav {
+    margin: 0 30px;
+  }
+}
+
+@media (min-width: 554px) and (max-width: 1024px) {
+  .products {
+    &_product-wrapper,
+    &_nav {
+      margin: 0 50px;
+    }
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 2600px) {
+  .products {
+    &_product-wrapper,
+    &_nav {
+      align-content: center;
+      margin: 0 70px;
+    }
+  }
+}
+/* if snappiness doesnt look right - update the margin */

@@ -4,7 +4,7 @@ import ProductsContainer from './containers/ProductsContainer';
 import CartContainer from './containers/CartContainer';
 import 'bootstrap/dist/css/bootstrap.css';
 
-import './app.css';
+import './app.scss';
 
 const App = () => (
   <BrowserRouter>

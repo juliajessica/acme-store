@@ -9,7 +9,7 @@ import Button from '../components/Button';
 import FullScreenModal from '../components/Modal';
 import Cart from '../components/Cart';
 
-import './navbar.css';
+import './navbar.scss';
 
 const totalQuantity = null;
 
@@ -71,7 +71,7 @@ const NavBar = ({ products, total }) => {
         <Link to="/">
           <h1>Acme Store</h1>
         </Link>
-        <div className="navbar_coloumn2">{cartButton()}</div>
+        <div className="navbar_column2">{cartButton()}</div>
       </div>
       <FullScreenModal show={show} handleClose={handleClose} onHide={handleClose} title="Your Cart">
         <Cart handleClose={handleClose} products={products} total={total} />

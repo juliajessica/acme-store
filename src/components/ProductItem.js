@@ -3,7 +3,7 @@ import { shape, string, number, func } from 'prop-types';
 import Button from './Button';
 import { images } from '../utils/imageArray';
 
-import './productItem.css';
+import './productItem.scss';
 
 const ProductItem = ({ product, onAddToCartClicked }) => {
   return (
@@ -17,7 +17,7 @@ const ProductItem = ({ product, onAddToCartClicked }) => {
           })}
         </div>
         <div className="product_item-details">
-          <p className="product_title-price">
+          <p className="product_item-title-price">
             <span>{product.title}</span>
             <span>{`$${product.price}`}</span>
           </p>

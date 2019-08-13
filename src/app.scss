@@ -14,23 +14,23 @@ body {
   margin: 0;
   font-size: 14px;
   line-height: 17px;
-}
-
-h1 {
-  font-family: 'Chivo', sans-serif;
-  font-weight: bold;
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.spinner {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  margin: 118px 0;
+  h1 {
+    font-family: 'Chivo', sans-serif;
+    font-weight: bold;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  .spinner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 118px 0;
+  }
 }

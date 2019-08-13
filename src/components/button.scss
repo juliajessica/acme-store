@@ -1,0 +1,90 @@
+.button {
+  &_container {
+    font-family: 'Chivo', sans-serif;
+    font-weight: lighter;
+    color: #292929;
+    font-size: 14px;
+    border: none;
+    text-align: center;
+    button:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      outline: none;
+    }
+    &:disabled {
+      opacity: 0.2;
+      cursor: default;
+    }
+  }
+  /* primary theme  */
+  &_primary {
+    height: 41px;
+    width: 139px;
+    background-color: #5e97d1;
+    color: white;
+    border-radius: 20px;
+    text-transform: uppercase;
+    border: none;
+    &:hover {
+      background-color: #407fc0;
+    }
+  }
+  /* secondary theme  */
+  &_secondary-minus {
+    width: 95px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 20px 0 0 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: #5e97d1;
+    }
+  }
+  &_secondary-add {
+    width: 95px;
+    height: 40px;
+    background-color: #f5f5f5;
+    border-radius: 0 20px 20px 0;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background-color: #5e97d1;
+    }
+  }
+  /* textLink theme  */
+  &_textLink {
+    display: flex;
+    text-transform: none;
+    background: none;
+    padding: 0;
+    text-decoration: none;
+    &:hover {
+      fill: #407fc0;
+      color: #407fc0;
+      text-decoration: none;
+      svg path {
+        fill: #407fc0;
+        color: #407fc0;
+      }
+    }
+    svg {
+      margin-top: 15px;
+      height: 13.54px;
+      width: 17px;
+      margin-right: 8px;
+      path {
+        fill: #292929;
+        &:hover {
+          fill: #407fc0;
+          color: #407fc0;
+        }
+      }
+    }
+  }
+}

@@ -44,5 +44,6 @@ Note: You're encouraged to show your work by including multiple commits - we'll 
 - React Router Dom
 
 _For development and cleanliness of code:_
-Eslint
-Prettier
+
+- Eslint
+- Prettier

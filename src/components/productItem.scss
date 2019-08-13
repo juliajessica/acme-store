@@ -1,0 +1,127 @@
+/* mobile default */
+.product_item {
+  width: 100%;
+  &-container {
+    margin-bottom: 20px;
+    background-color: #ffff;
+    border-radius: 8px;
+    img {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      border-radius: 8px 8px 0 0;
+    }
+    /* remainder */
+    p:nth-of-type(2) {
+      color: #9b9b9b;
+      text-transform: uppercase;
+      font-size: 12px;
+      line-height: 14px;
+      padding-bottom: 20px;
+    }
+    button {
+      width: 121px;
+      height: 31px;
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+  }
+  &-details {
+    padding: 20px 25px;
+    /* border-radius: 8px; */
+  }
+  &-title-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    /* title */
+    span:nth-of-type(1) {
+      font-weight: normal;
+      font-style: normal;
+      font-size: 21px;
+      line-height: 25px;
+    }
+    /* price */
+    span:nth-of-type(2) {
+      font-weight: lighter;
+      font-size: 16px;
+      line-height: 19px;
+    }
+  }
+}
+/* tablet */
+/* set the max-width to from default 481px to 615px due to inconsistency 
+between the size of the card's since chronograph title is too long */
+@media (min-width: 615px) and (max-width: 1024px) {
+  .product_item {
+    display: flex;
+    &-container {
+      img {
+        border-radius: 8px 0 0 8px;
+        object-fit: cover;
+      }
+      p:nth-of-type(2) {
+        font-size: 12px;
+        line-height: 14px;
+      }
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+    &-title-price {
+      span:nth-of-type(1) {
+        font-size: 28px;
+        line-height: 33px;
+      }
+    }
+    &-details {
+      padding: 20px 30px;
+      width: 100%;
+    }
+  }
+}
+
+// /* web - full screen */
+@media (min-width: 1025px) and (max-width: 2600px) {
+  .product_item {
+    display: flex;
+    &-container {
+      min-height: 282px;
+      width: 100%;
+      /* min-width: 1120px; */
+      /* remainder */
+      p:nth-of-type(2) {
+        font-size: 13px;
+        line-height: 15px;
+        padding-bottom: 50px;
+      }
+      button {
+        margin-top: 30px;
+      }
+    }
+    &-title-price {
+      /* title */
+      span:nth-of-type(1) {
+        font-size: 38px;
+        line-height: 46px;
+      }
+      /* price */
+      span:nth-of-type(2) {
+        font-size: 21px;
+        line-height: 25px;
+      }
+    }
+    img {
+      border-radius: 8px 0 0 8px;
+      height: auto;
+      width: auto;
+    }
+    &-details {
+      padding: 20px 30px;
+      width: 100%;
+    }
+  }
+}

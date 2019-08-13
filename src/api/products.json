@@ -3,8 +3,7 @@
     "id": 1,
     "title": "Chronograph",
     "price": 500.01,
-    "inventory": 2,
-    "image": "../assets/chronograph.png"
+    "inventory": 2
   },
   {
     "id": 2,

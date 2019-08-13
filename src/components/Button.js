@@ -2,7 +2,7 @@ import React from 'react';
 import { string, node, oneOfType } from 'prop-types';
 import { ShoppingCart, Minus, Add } from '../assets/svgs';
 
-import './button.css';
+import './button.scss';
 
 const Button = ({ children, customClass, theme, type, ...rest }) => {
   const renderSvg = () => {
