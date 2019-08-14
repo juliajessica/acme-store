@@ -1,9 +1,9 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useEffect } from 'react';
 import { number, string, arrayOf, shape, func } from 'prop-types';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { checkout } from '../actions';
-import { getCartProducts, getQuantity, getTotal } from '../reducers';
+import { getCartProducts, getTotal } from '../reducers';
 
 import Button from '../components/Button';
 import FullScreenModal from '../components/Modal';
@@ -11,31 +11,41 @@ import Cart from '../components/Cart';
 
 import './navbar.scss';
 
-const totalQuantity = null;
-
-const cartText = products => {
-  console.log('cartText products', products);
-
-  const emptyCart = 'Your cart is empty';
-  const cartWithItems = `${totalQuantity} items in your cart`;
-
-  return totalQuantity > 0 ? cartWithItems : emptyCart;
-};
-
 const NavBar = ({ products, total }) => {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const [total, getTotal] = useState(0);
+  // const [quantity, getQuantity] = useState(prevState => {
+  //   return { ...prevState, quantity };
+  // });
+
+  const quantityArray = [];
+  let finalQuantity = 0;
+
+  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+  const pluckQuantity = array => {
+    array.map(item => {
+      return quantityArray.push(item.quantity);
+    });
+    const copy = [...quantityArray];
+    finalQuantity = copy.reduce(reducer, 0);
+    console.log('v', finalQuantity);
+    return finalQuantity;
+  };
 
   const cartButton = () => {
+    console.log('CART BUTTON', finalQuantity);
+    if (finalQuantity > 1) {
+      console.log('hi');
+    }
     const windowWidth = window.innerWidth;
     let cartDisplay = null;
 
-    if (windowWidth >= 1025) {
-      cartDisplay = (
+    const buttonComp = () => {
+      return (
         <Button
           onClick={() => {
             handleShow();
@@ -44,26 +54,26 @@ const NavBar = ({ products, total }) => {
           theme="textLink"
           disabled={products.length > 0 ? '' : 'disabled'}
         >
-          <span className="navbar_cart">{cartText(products)}</span>
+          <span className="navbar_cart">
+            {finalQuantity > 0 ? `${finalQuantity} items in your cart` : `Your cart is empty`}
+          </span>
         </Button>
       );
+    };
+
+    if (windowWidth >= 1025) {
+      cartDisplay = buttonComp();
     } else {
-      cartDisplay = (
-        <Link to="/cart">
-          <Button
-            onClick={() => {
-              checkout(products);
-            }}
-            theme="textLink"
-            disabled={products.length > 0 ? '' : 'disabled'}
-          >
-            <span className="navbar_cart">{cartText(products)}</span>
-          </Button>
-        </Link>
-      );
+      cartDisplay = <Link to="/cart">{buttonComp()}</Link>;
     }
     return cartDisplay;
   };
+
+  useEffect(() => {
+    pluckQuantity(products);
+    cartButton(); // setTimeout(cartButton(), 2000);
+    console.log('finalQuantity in Efffectt', finalQuantity);
+  });
 
   return (
     <Fragment>
@@ -85,19 +95,18 @@ NavBar.propTypes = {
     shape({
       id: number.isRequired,
       title: string.isRequired,
-      inventory: number.isRequired
+      inventory: number.isRequired,
+      quantity: number.isRequired
     })
   ).isRequired,
-  checkout: func.isRequired,
-  total: string.isRequired
-  // quantity: obj.isRequired
+  checkout: func.isRequired
   // viewCart: func.isRequired
 };
 
 const mapStateToProps = state => ({
   products: getCartProducts(state),
-  quantity: getQuantity(state),
   total: getTotal(state)
+  // quantity: getQuantity(state),
 });
 
 export default connect(
