@@ -1,32 +1,29 @@
 import React, { Fragment } from 'react';
 import { Link } from 'react-router-dom';
 import { shape, arrayOf, number, string, func } from 'prop-types';
+// import { checkout } from '../actions';
+
+// import { getCartProducts } from '../reducers';
 import Product from './Product';
 import { Close, ShoppingCart } from '../assets/svgs';
 
 import './cart.scss';
 import CalculateTotals from './CalculatedTotals';
-// import RenderModal from './Modal';
 
-const Cart = ({ products, total, onCheckoutClicked }) => {
-  console.log('products', products);
-  // const [show, setShow] = useState(true);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true);
+const Cart = ({ products, total, onCheckoutClicked, addToCart, removeFromCart }) => {
+  console.log('CART: products', products);
 
   const hasProducts = products.length > 0;
   const nodes = hasProducts ? (
     products.map(product => (
-      <div className="cart_products">
-        <Product
-          title={product.title}
-          price={product.price}
-          quantity={product.quantity}
-          key={product.id}
-          image={product.image}
-        />
-      </div>
+      <Product
+        title={product.title}
+        price={product.price}
+        quantity={product.quantity}
+        key={product.id}
+        onAddToCart={() => addToCart(product.id)}
+        onRemoveFromCart={() => removeFromCart(product.id)}
+      />
     ))
   ) : (
     <div className="cart_empty">
@@ -35,9 +32,11 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
     </div>
   );
 
+  // const arrayOfIds = products.map(product => product.id);
+  // console.log('seeIfIWork', arrayOfIds.forEach(id => () => addToCart(id)));
+
   const headerDisplay = () => {
     const windowWidth = window.innerWidth;
-    console.log('windowWidth', windowWidth);
     const closeIcon = (
       <div className="cart_header">
         <Link to="/">
@@ -52,15 +51,11 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
   return (
     <div className="cart_container">
       {headerDisplay()}
-      {nodes}
+      <div className="cart_products">{nodes}</div>
       {products.length ? (
         <Fragment>
           <div className="cart_products">
-            <CalculateTotals
-              total={total}
-              onCheckoutClicked={onCheckoutClicked}
-              hasProducts={hasProducts}
-            />
+            <CalculateTotals total={total} />
           </div>
           <button
             className="calculated-totals_checkout-button"
@@ -79,19 +74,19 @@ const Cart = ({ products, total, onCheckoutClicked }) => {
 Cart.propTypes = {
   products: arrayOf(
     shape({
-      id: number.isRequired,
-      title: string.isRequired,
-      price: number.isRequired,
-      quantity: number.isRequired,
-      image: string.isRequired
+      id: number,
+      title: string,
+      price: number,
+      quantity: number
     })
-  ),
+  ).isRequired,
   total: string,
-  onCheckoutClicked: func
+  onCheckoutClicked: func,
+  addToCart: func.isRequired,
+  removeFromCart: func.isRequired
 };
 
 Cart.defaultProps = {
-  products: [],
   total: null,
   onCheckoutClicked: null
 };

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { func, number, string, arrayOf, shape } from 'prop-types';
 import { connect } from 'react-redux';
-import { addToCart } from '../actions';
+import { addToCart, checkout } from '../actions';
 import { getVisibleProducts } from '../reducers/products';
 import NavBar from './NavBar';
 import ProductItem from '../components/ProductItem';
@@ -25,7 +25,7 @@ const ProductsContainer = ({ products, addToCart }) => {
     return (
       <div className="products_container">
         <div className="products_nav">
-          <NavBar />
+          <NavBar products={products} />
         </div>
         <ProductsList>
           <div className="products_product-wrapper">
@@ -47,10 +47,10 @@ const ProductsContainer = ({ products, addToCart }) => {
 ProductsContainer.propTypes = {
   products: arrayOf(
     shape({
-      id: number.isRequired,
-      title: string.isRequired,
-      price: number.isRequired,
-      inventory: number.isRequired
+      id: number,
+      title: string,
+      price: number,
+      inventory: number
     })
   ).isRequired,
   addToCart: func.isRequired
@@ -62,5 +62,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { addToCart }
+  { addToCart, checkout }
 )(ProductsContainer);

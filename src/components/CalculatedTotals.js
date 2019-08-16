@@ -14,7 +14,6 @@ const CalculateTotals = ({ total }) => {
   const finalTotal = () => {
     taxOnItems();
     const totalPrice = parseFloat(calculatedTotalTax, 10) + parseInt(total, 10);
-
     return totalPrice.toLocaleString();
   };
   const convertTotalToNum = parseFloat(total, 10);
@@ -35,7 +34,13 @@ const CalculateTotals = ({ total }) => {
         <span>Total:</span>
         <span className="calculated-totals_final-total">{`$${finalTotal()}`}</span>
       </p>
-      <button className="calculated-totals_update-button" type="button">
+      <button
+        className="calculated-totals_update-button"
+        type="button"
+        onClick={() => {
+          console.log('update cart');
+        }}
+      >
         Update
       </button>
     </div>
@@ -45,4 +50,5 @@ const CalculateTotals = ({ total }) => {
 CalculateTotals.propTypes = {
   total: string.isRequired
 };
+
 export default CalculateTotals;

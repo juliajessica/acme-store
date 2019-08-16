@@ -11,36 +11,29 @@ import Cart from '../components/Cart';
 
 import './navbar.scss';
 
-const NavBar = ({ products, total }) => {
+const NavBar = ({ products, total, addToCart, removeFromCart }) => {
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  // const [quantity, getQuantity] = useState(prevState => {
-  //   return { ...prevState, quantity };
-  // });
-
-  const quantityArray = [];
   let finalQuantity = 0;
 
-  const reducer = (accumulator, currentValue) => accumulator + currentValue;
+  const reducer = (acc, currentVal) => acc + currentVal;
 
   const pluckQuantity = array => {
+    const quantityArray = [];
     array.map(item => {
       return quantityArray.push(item.quantity);
     });
     const copy = [...quantityArray];
     finalQuantity = copy.reduce(reducer, 0);
-    console.log('v', finalQuantity);
+
     return finalQuantity;
   };
 
   const cartButton = () => {
-    console.log('CART BUTTON', finalQuantity);
-    if (finalQuantity > 1) {
-      console.log('hi');
-    }
+    pluckQuantity(products);
+
     const windowWidth = window.innerWidth;
     let cartDisplay = null;
 
@@ -70,9 +63,7 @@ const NavBar = ({ products, total }) => {
   };
 
   useEffect(() => {
-    pluckQuantity(products);
-    cartButton(); // setTimeout(cartButton(), 2000);
-    console.log('finalQuantity in Efffectt', finalQuantity);
+    cartButton();
   });
 
   return (
@@ -84,7 +75,13 @@ const NavBar = ({ products, total }) => {
         <div className="navbar_column2">{cartButton()}</div>
       </div>
       <FullScreenModal show={show} handleClose={handleClose} onHide={handleClose} title="Your Cart">
-        <Cart handleClose={handleClose} products={products} total={total} />
+        <Cart
+          handleClose={handleClose}
+          products={products}
+          total={total}
+          addToCart={addToCart}
+          removeFromCart={removeFromCart}
+        />
       </FullScreenModal>
     </Fragment>
   );
@@ -93,20 +90,25 @@ const NavBar = ({ products, total }) => {
 NavBar.propTypes = {
   products: arrayOf(
     shape({
-      id: number.isRequired,
-      title: string.isRequired,
-      inventory: number.isRequired,
-      quantity: number.isRequired
+      id: number,
+      title: string,
+      inventory: number,
+      quantity: number
     })
   ).isRequired,
-  checkout: func.isRequired
-  // viewCart: func.isRequired
+  total: string.isRequired,
+  addToCart: func,
+  removeFromCart: func
+};
+
+NavBar.defaultProps = {
+  addToCart: () => {},
+  removeFromCart: () => {}
 };
 
 const mapStateToProps = state => ({
   products: getCartProducts(state),
   total: getTotal(state)
-  // quantity: getQuantity(state),
 });
 
 export default connect(

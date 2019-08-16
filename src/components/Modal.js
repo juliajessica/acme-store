@@ -1,8 +1,8 @@
 import React from 'react';
-import { Modal, Fade, utils } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import { node, string, func, bool, oneOfType } from 'prop-types';
 import FadeIn from 'react-fade-in';
-// import { Close } from '../assets/svgs';
+// import { Close } from '../assets/svgs'; // have to use the cloeButton prop from the react-bootstrap library
 
 const FullScreenModal = ({ show, handleClose, children, title, ...rest }) => {
   return (
