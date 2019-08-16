@@ -17,15 +17,25 @@ const addToCartUnsafe = productId => ({
   productId
 });
 
+const removeFromCartUnsafe = productId => ({
+  type: types.REMOVE_FROM_CART,
+  productId
+});
+
 export const addToCart = productId => (dispatch, getState) => {
   if (getState().products.byId[productId].inventory > 0) {
     dispatch(addToCartUnsafe(productId));
   }
 };
 
+export const removeFromCart = productId => (dispatch, getState) => {
+  if (getState().products.byId[productId].inventory > 0) {
+    dispatch(removeFromCartUnsafe(productId));
+  }
+};
+
 export const checkout = products => (dispatch, getState) => {
   const { cart } = getState();
-  console.log('cart', cart);
 
   dispatch({
     type: types.CHECKOUT_REQUEST

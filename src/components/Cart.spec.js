@@ -5,14 +5,16 @@ import Product from './Product';
 
 const setup = (total, products = []) => {
   const actions = {
-    onCheckoutClicked: jest.fn()
+    onCheckoutClicked: jest.fn(),
+    addToCart: jest.fn(),
+    removeFromCart: jest.fn()
   };
 
   const component = shallow(<Cart products={products} total={total} {...actions} />);
 
   return {
-    component: component,
-    actions: actions,
+    component,
+    actions,
     button: component.find('button'),
     products: component.find(Product),
     em: component.find('em'),
@@ -62,7 +64,7 @@ describe('Cart component', () => {
       expect(button.prop('disabled')).toEqual('');
     });
 
-    it('should call action on button click', () => {
+    it('should call onCheckoutClicked action on button click', () => {
       const { button, actions } = setup('9.99', product);
       button.simulate('click');
       expect(actions.onCheckoutClicked).toBeCalled();

@@ -9,18 +9,21 @@
 - [x] Add all svgs and images into Assets folder
 - [x] Identify and create reusable components and add all the different states to them
 - [x] Build from mobile first
-- [ ] Verify the tax percentage and calculate it for the cart total
+- [x] Verify the tax percentage and calculate it for the cart total
 - [x] Look up modals in React
 - [x] Add states for loading - for a better UX Experience
 - [x] Note to self: I can use any react library to add to the app
 - [x] Look at how to add Sass into the App
-- [] Verify that the app is responsive in Chrome, Firefox, and Safari
-- [] Update px to rem
+- [x] Verify that the app is responsive in Chrome, Firefox, and Safari
+- [x] Add util function to update px to em
+- [] Run `npm run test` and verify that all the tests are still passing - **_in progress_**
+- [] Add additional tests for the add and remove added functionality
+- [] Add a test for the get API call and verify the response is returning as expected
 
 TASK LIST REQUIREMENTS
 
 - [x] task 01 - responsive design
-- [] task 02 - cart enhancements
+- [] task 02 - cart enhancements - **_in progress_**
 - [] task 03 - product api
 
 ## Button Types:
@@ -55,7 +58,7 @@ TASK LIST REQUIREMENTS
 
 1. CartContainer - It is a wrapper for the Cart component and it also is the link between redux/react to handle `mapStateToProps` obtaining the products and totals calling both `getCartProducts()` and `getTotal()` (reducer functions) at the highest level passing them into the Cart component.
 2. Product - renders the products image, title, total, price, and addButton
-3. CalculatedTotals - I seperated this logic in order to keep........
+3. CalculatedTotals - Seperate the calculation logic to keep the cart file small and clean.
 
 ## RESEARCH/DISCOVER:
 
@@ -70,7 +73,9 @@ I noticed that the numeric total quantity for each item in the cart had the font
 
 ### NOTES:
 
-I also went ahead and created a Utils directory where I created an array of image objects with urls, titles, and alt tags. Since the actual mock projucts JSON object didn't provide images and without manipulating the data I thought I would be best to create a seperate file for the images so they could be updated/changed at any time for each product.
+I also went ahead and created a Utils directory where I created an array of image objects with urls, titles, and alt tags. Since the actual mock projucts JSON object didn't provide images and without manipulating the data I thought I would be best to create a seperate file for the images so they could be updated/changed at any time for each product. I do want to note the reson I didn't add a new key to the JSON data object for an image for each product is because if I were going to be making an API call I noticed that their wasn't already an image key so I thought about building a smart application that I wouln't have to refactor later to seperatly obtain an image.
+
+I created a util function for calculating px to em. Since the application is expected to grow and we want to scale acrss all browsers it's importnat to handle the font sizes accordingly.
 
 **_QUESTIONS TO ASK:_**
 

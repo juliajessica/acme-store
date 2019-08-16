@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { RECEIVE_PRODUCTS, ADD_TO_CART } from '../constants/ActionTypes';
+import { RECEIVE_PRODUCTS, ADD_TO_CART, REMOVE_FROM_CART } from '../constants/ActionTypes';
 
 const products = (state, action) => {
   switch (action.type) {
@@ -7,6 +7,11 @@ const products = (state, action) => {
       return {
         ...state,
         inventory: state.inventory - 1
+      };
+    case REMOVE_FROM_CART:
+      return {
+        ...state,
+        inventory: state.quantity - 1
       };
     default:
       return state;
@@ -19,11 +24,13 @@ const byId = (state = {}, action) => {
       return {
         ...state,
         ...action.products.reduce((obj, product) => {
+          // eslint-disable-next-line no-param-reassign
           obj[product.id] = product;
           return obj;
         }, {})
       };
     default:
+      // eslint-disable-next-line no-case-declarations
       const { productId } = action;
       if (productId) {
         return {
