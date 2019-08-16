@@ -1,3 +1,5 @@
+@import '../utils/calculateEm.scss';
+
 /* mobile default */
 .product_item {
   width: 100%;
@@ -16,15 +18,15 @@
     p:nth-of-type(2) {
       color: #9b9b9b;
       text-transform: uppercase;
-      font-size: 12px;
+      font-size: calculateEm(12px);
       line-height: 14px;
-      padding-bottom: 20px;
+      margin: 0;
     }
     button {
       width: 121px;
       height: 31px;
-      font-size: 13px;
       margin-bottom: 20px;
+      margin-top: 90px;
     }
   }
   &-details {
@@ -40,13 +42,13 @@
     span:nth-of-type(1) {
       font-weight: normal;
       font-style: normal;
-      font-size: 21px;
+      font-size: calculateEm(21px);
       line-height: 25px;
     }
     /* price */
     span:nth-of-type(2) {
       font-weight: lighter;
-      font-size: 16px;
+      font-size: calculateEm(16px);
       line-height: 19px;
     }
   }
@@ -63,7 +65,7 @@ between the size of the card's since chronograph title is too long */
         object-fit: cover;
       }
       p:nth-of-type(2) {
-        font-size: 12px;
+        font-size: calculateEm(12px);
         line-height: 14px;
       }
     }
@@ -73,7 +75,7 @@ between the size of the card's since chronograph title is too long */
     }
     &-title-price {
       span:nth-of-type(1) {
-        font-size: 28px;
+        font-size: calculateEm(28px);
         line-height: 33px;
       }
     }
@@ -91,26 +93,25 @@ between the size of the card's since chronograph title is too long */
     &-container {
       min-height: 282px;
       width: 100%;
-      /* min-width: 1120px; */
       /* remainder */
       p:nth-of-type(2) {
-        font-size: 13px;
+        font-size: calculateEm(13px);
         line-height: 15px;
-        padding-bottom: 50px;
+        padding-bottom: 60px;
       }
       button {
-        margin-top: 30px;
+        margin-top: 20px;
       }
     }
     &-title-price {
       /* title */
       span:nth-of-type(1) {
-        font-size: 38px;
+        font-size: calculateEm(38px);
         line-height: 46px;
       }
       /* price */
       span:nth-of-type(2) {
-        font-size: 21px;
+        font-size: calculateEm(21px);
         line-height: 25px;
       }
     }

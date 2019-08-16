@@ -1,9 +1,11 @@
+@import '../utils/calculateEm.scss';
+
 .button {
   &_container {
     font-family: 'Chivo', sans-serif;
     font-weight: lighter;
     color: #292929;
-    font-size: 14px;
+    font-size: calculateEm(14px);
     border: none;
     text-align: center;
     button:hover {

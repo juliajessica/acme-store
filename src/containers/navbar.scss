@@ -1,3 +1,5 @@
+@import '../utils/calculateEm.scss';
+
 .navbar {
   &_container {
     display: flex;
@@ -13,7 +15,7 @@
   &_column2 span {
     font-family: 'Chivo', sans-serif;
     font-weight: normal;
-    font-size: 14px;
+    font-size: calculateEm(14px);
     margin-top: 14px;
   }
 }

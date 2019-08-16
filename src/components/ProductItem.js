@@ -37,9 +37,9 @@ const ProductItem = ({ product, onAddToCartClicked }) => {
 
 ProductItem.propTypes = {
   product: shape({
-    title: string.isRequired,
-    price: number.isRequired,
-    inventory: number.isRequired
+    title: string,
+    price: number,
+    inventory: number
   }).isRequired,
   onAddToCartClicked: func.isRequired
 };

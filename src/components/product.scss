@@ -1,3 +1,5 @@
+@import '../utils/calculateEm.scss';
+
 .product {
   &_details {
     display: flex;
@@ -22,7 +24,7 @@
     /* title */
     span:nth-of-type(1) {
       font-family: 'Chivo', sans-serif;
-      font-size: 16px;
+      font-size: calculateEm(16px);
       line-height: 19px;
       font-weight: normal;
       font-style: normal;
@@ -31,7 +33,7 @@
     span:nth-of-type(2) {
       font-family: 'Chivo', sans-serif;
       font-weight: lighter;
-      font-size: 14px;
+      font-size: calculateEm(14px);
       line-height: 17px;
     }
   }
