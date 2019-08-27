@@ -62,10 +62,10 @@ TASK LIST REQUIREMENTS
 
 ## RESEARCH/DISCOVER:
 
-Work on the modal was pulled from React Bootstrap: https://react-bootstrap.netlify.com/components/modal/#modal-props
-Animations are pulled from the React-Fade-In Library: https://www.npmjs.com/package/react-fade-in
-For routing through the application I simply used React-Router-Dom: https://www.npmjs.com/package/react-router-dom
-Having to toggle between the modal for the full-screen shopping cart view I have to figure out the window.inner width to change the display: https://developer.mozilla.org/en-US/docs/Web/API/window/innerWidth
+- Work on the modal was pulled from React Bootstrap: https://react-bootstrap.netlify.com/components/modal/#modal-props
+- Animations are pulled from the React-Fade-In Library: https://www.npmjs.com/package/react-fade-in
+- For routing through the application I simply used React-Router-Dom: https://www.npmjs.com/package/react-router-dom
+- Having to toggle between the modal for the full-screen shopping cart view I have to figure out the window.inner width to change the display: https://developer.mozilla.org/en-US/docs/Web/API/window/innerWidth
 
 ### Cart:
 
@@ -80,6 +80,6 @@ I created a util function for calculating px to em. Since the application is exp
 **_QUESTIONS TO ASK:_**
 
 What is the state tax? - https://pocketsense.com/how-to-calculate-sales-tax-backwards-from-total-13712245.html
-Based off of the designs it seems that the application is adding a tax value to the total. The desings example shows $40.34 is applied to the $500.01 total. I calculated that the tax is a total of 8% for each item. - verfiy that this is correct with Diana.
+Based off of the designs it seems that the application is adding a tax value to the total. The desings example shows $40.34 is applied to the $500.01 total. I calculated that the tax is a total of 8% for each item.
 
 Does this require adding additional testing?

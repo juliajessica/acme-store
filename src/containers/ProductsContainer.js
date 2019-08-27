@@ -28,15 +28,15 @@ const ProductsContainer = ({ products, addToCart }) => {
           <NavBar products={products} />
         </div>
         <ProductsList>
-          <div className="products_product-wrapper">
-            {products.map(product => (
+          {products.map(product => (
+            <div className="products_product-wrapper">
               <ProductItem
                 key={product.id}
                 product={product}
                 onAddToCartClicked={() => addToCart(product.id)}
               />
-            ))}
-          </div>
+            </div>
+          ))}
         </ProductsList>
       </div>
     );

@@ -11,7 +11,7 @@ import './cart.scss';
 import CalculateTotals from './CalculatedTotals';
 
 const Cart = ({ products, total, onCheckoutClicked, addToCart, removeFromCart }) => {
-  console.log('CART: products', products);
+  console.log('CART: products', typeof products);
 
   const hasProducts = products.length > 0;
   const nodes = hasProducts ? (

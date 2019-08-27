@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Product component should return component 1`] = `
+"<div className=\\"product_container\\">
+  <div className=\\"product_details\\">
+    <div className=\\"product_image\\" />
+    <div className=\\"product_details-flex\\">
+      <span>
+        Test Product
+      </span>
+      <span>
+        $9.99
+      </span>
+      <button type=\\"button\\" className=\\"product_remove-button\\">
+        Remove
+      </button>
+    </div>
+  </div>
+  <div className=\\"product_total-quantity\\">
+    <Button onClick={[Function: mockConstructor]} theme=\\"secondary-minus\\" disabled=\\"\\" customClass={{...}} type=\\"button\\" />
+    <div className=\\"product_quantity\\">
+      3
+    </div>
+    <Button onClick={[Function: mockConstructor]} theme=\\"secondary-add\\" disabled=\\"\\" customClass={{...}} type=\\"button\\" />
+  </div>
+  <p>
+    1 remaining
+  </p>
+</div>"
+`;

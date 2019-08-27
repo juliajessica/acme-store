@@ -6,6 +6,7 @@ import { getTotal, getCartProducts } from '../reducers';
 import Cart from '../components/Cart';
 
 const CartContainer = ({ products, total, checkout, addToCart, removeFromCart }) => {
+  console.log('wht am i ', products);
   return (
     <Cart
       products={products}
